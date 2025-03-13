@@ -8,9 +8,11 @@ router = APIRouter(prefix="/websites", tags=["websites"])
 
 fakedb = []
 
+
 @router.get("/")
 async def get_websites(page: Annotated[Page, Query()]) -> list[Website]:
     return fakedb
+
 
 @router.post("/")
 async def put_websites(website: Website) -> Website:
